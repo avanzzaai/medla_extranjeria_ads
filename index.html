@@ -72,8 +72,8 @@
         <a href="#preguntas">Preguntas</a>
       </nav>
       <a class="nav__phone" href="tel:+34914321457" data-track="click_phone">+34 914 32 14 57</a>
-      <a class="btn btn--accent btn--sm" href="#reserva" data-track="cta_nav">
-        <span>Reservar consulta</span>
+      <a class="btn btn--accent btn--sm" href="/agendar/" data-go data-track="cta_nav">
+        <span>Reservar<span class="hide-xs"> consulta</span></span>
         <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
       </a>
     </div>
@@ -122,12 +122,12 @@
           </p>
 
           <div class="hero__ctas" data-hero-ctas>
-            <a class="btn btn--accent btn--lg" href="#reserva" data-track="cta_hero">
+            <a class="btn btn--accent btn--lg" href="/agendar/" data-go data-track="cta_hero">
               <span>Quiero mi consulta · 60,50 €</span>
               <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
             </a>
-            <a class="btn btn--glass btn--lg" href="https://wa.me/34914321457?text=Hola%20MEDLA%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20consulta%20de%20extranjer%C3%ADa" target="_blank" rel="noopener" data-track="click_whatsapp">
-              <span>Prefiero escribir por WhatsApp</span>
+            <a class="btn btn--glass btn--lg" href="/whatsapp/" data-go data-track="wa_hero">
+              <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5"/></svg><span>Escribir por WhatsApp</span>
             </a>
           </div>
           <p class="hero__note" data-hero-lead>Si contratas el trámite en los 3 días siguientes, te descontamos los 60,50 €.</p>
@@ -149,7 +149,7 @@
             </div>
             <div class="finder__go">
               <p class="finder__price"><strong>45 min</strong><span>60,50 € IVA incl.</span></p>
-              <a class="btn btn--ink" href="#reserva" data-track="cta_finder">
+              <a class="btn btn--ink" href="/agendar/" data-go data-track="cta_finder">
                 <span>Ver horarios</span>
                 <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
               </a>
@@ -193,7 +193,7 @@
         </header>
 
         <div class="cases__grid">
-          <a class="case case--urgent" id="regularizacion" href="#reserva" data-motivo="Regularización 2026" data-track="case_select" data-case>
+          <a class="case case--urgent" id="regularizacion" href="/agendar/" data-go data-motivo="Regularización 2026" data-track="case_select" data-case>
             <div class="case__media"><img src="assets/img/lawyer.webp" alt="Abogado revisando un expediente junto a una balanza de la justicia" width="1000" height="700" loading="lazy" data-parallax></div>
             <div class="case__body">
               <span class="badge badge--accent">Regularización extraordinaria 2026</span>
@@ -204,7 +204,7 @@
             </div>
           </a>
 
-          <a class="case case--a" href="#reserva" data-motivo="Arraigo" data-track="case_select" data-case>
+          <a class="case case--a" href="/agendar/" data-go data-motivo="Arraigo" data-track="case_select" data-case>
             <div class="case__media"><img src="assets/img/boxes.webp" alt="Mujer sentada entre cajas de mudanza en su nuevo piso" width="1200" height="868" loading="lazy" data-parallax></div>
             <div class="case__body">
               <span class="badge">Social · Sociolaboral · Socioformativo · Familiar</span>
@@ -214,7 +214,7 @@
             </div>
           </a>
 
-          <a class="case case--b" href="#reserva" data-motivo="Nacionalidad española" data-track="case_select" data-case>
+          <a class="case case--b" href="/agendar/" data-go data-motivo="Nacionalidad española" data-track="case_select" data-case>
             <div class="case__media"><img src="assets/img/sevilla.webp" alt="Plaza de España de Sevilla al atardecer" width="1280" height="853" loading="lazy" data-parallax></div>
             <div class="case__body">
               <span class="badge">2 años si eres iberoamericano</span>
@@ -224,7 +224,7 @@
             </div>
           </a>
 
-          <a class="case case--c" href="#reserva" data-motivo="Visado (estudios, nómada digital, no lucrativa)" data-track="case_select" data-case>
+          <a class="case case--c" href="/agendar/" data-go data-motivo="Visado (estudios, nómada digital, no lucrativa)" data-track="case_select" data-case>
             <div class="case__media"><img src="assets/img/passport.webp" alt="Mujer sonriente con un pasaporte y un globo terráqueo" width="1200" height="900" loading="lazy" data-parallax></div>
             <div class="case__body">
               <span class="badge">Nómada digital · No lucrativa</span>
@@ -234,7 +234,7 @@
             </div>
           </a>
 
-          <a class="case case--d" href="#reserva" data-motivo="Visado (estudios, nómada digital, no lucrativa)" data-track="case_select" data-case>
+          <a class="case case--d" href="/agendar/" data-go data-motivo="Visado (estudios, nómada digital, no lucrativa)" data-track="case_select" data-case>
             <div class="case__media"><img src="assets/img/students.webp" alt="Dos estudiantes revisando documentos juntos" width="1200" height="1000" loading="lazy" data-parallax></div>
             <div class="case__body">
               <span class="badge">Visado · Estancia · Paso a trabajo</span>
@@ -244,7 +244,7 @@
             </div>
           </a>
 
-          <a class="case case--e" href="#reserva" data-motivo="Renovación o cambio de permiso" data-track="case_select" data-case>
+          <a class="case case--e" href="/agendar/" data-go data-motivo="Renovación o cambio de permiso" data-track="case_select" data-case>
             <div class="case__media"><img src="assets/img/handshake.webp" alt="Abogado y clienta cerrando un trámite con un apretón de manos" width="1000" height="667" loading="lazy" data-parallax></div>
             <div class="case__body">
               <span class="badge">Renovación · Cambio de permiso</span>
@@ -253,6 +253,14 @@
               <span class="case__cta">Esta es mi situación <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
             </div>
           </a>
+        </div>
+
+        <div class="cta-row" data-reveal>
+          <p class="cta-row__text"><strong>¿No ves tu caso?</strong> Cuéntanoslo y te decimos qué vía tienes.</p>
+          <div class="cta-row__btns">
+            <a class="btn btn--accent" href="/agendar/" data-go data-track="cta_cases"><span>Agendar mi consulta</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+            <a class="btn btn--outline" href="/whatsapp/" data-go data-track="wa_cases"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5"/></svg><span>Escribir por WhatsApp</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -264,6 +272,7 @@
           <div class="stats__intro">
             <h2 id="stats-title" class="stats__title" data-reveal>Nunca hubo tantos expedientes de extranjería en España. <em>Por eso</em> cada error cuesta meses.</h2>
             <p class="stats__note" data-reveal>MEDLA lleva más de 6 años y más de 200 casos gestionados en España y México.</p>
+            <a class="btn btn--ink stats__cta" href="/agendar/" data-go data-track="cta_stats" data-reveal><span>Quiero revisar mi caso</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
           </div>
           <dl class="stats__grid">
             <div class="stat" data-reveal><dt>solicitudes de regularización extraordinaria entre abril y junio de 2026</dt><dd><span data-count="1174978">1.174.978</span></dd></div>
@@ -283,10 +292,11 @@
           <p class="eyebrow" data-reveal>Cómo funciona</p>
           <h2 id="how-title" class="h2" data-reveal>Tres pasos. El primero dura <em>45 minutos.</em></h2>
           <p class="how__lead" data-reveal>Sin desplazarte y sin compromiso de contratar nada más. Si decides seguir, lo que pagaste hoy cuenta a tu favor.</p>
-          <a class="btn btn--accent" href="#reserva" data-track="cta_how" data-reveal>
+          <a class="btn btn--accent" href="/agendar/" data-go data-track="cta_how" data-reveal>
             <span>Elegir día y hora</span>
             <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           </a>
+          <p class="how__alt" data-reveal>¿Primero una duda rápida? <a class="link" href="/whatsapp/" data-go data-track="wa_how">Escríbenos por WhatsApp</a></p>
         </div>
 
         <ol class="steps" data-steps>
@@ -295,7 +305,7 @@
             <span class="step__num">01</span>
             <div>
               <h3 class="h3">Reservas y pagas en línea</h3>
-              <p>Eliges día y hora en el calendario de esta página y pagas 60,50 € (IVA incluido) con tarjeta. Recibes la confirmación y el enlace de la videollamada al momento.</p>
+              <p>Eliges día y hora en el calendario y pagas 60,50 € (IVA incluido) con tarjeta. El equipo te contacta para confirmar la cita y enviarte el enlace de la videollamada.</p>
             </div>
           </li>
           <li class="step" data-step>
@@ -342,6 +352,7 @@
           <p class="eyebrow" data-reveal>Lo que te llevas</p>
           <h2 id="take-title" class="h2" data-reveal>Sales de la llamada con un <em>plan,</em> no con más dudas.</h2>
           <p class="takeaway__lead" data-reveal>Un mensaje de WhatsApp no basta para valorar tu historial migratorio, tus medios y tus plazos. 45 minutos con un abogado, sí.</p>
+          <a class="btn btn--accent takeaway__cta" href="/agendar/" data-go data-track="cta_takeaway" data-reveal><span>Quiero mi plan · 60,50 €</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
         </div>
 
         <div class="doc" data-reveal>
@@ -433,6 +444,15 @@
           <figcaption><span class="avatar" aria-hidden="true">LR</span><span><strong>Luzely Rubio</strong><small>Reseña de Google</small></span></figcaption>
         </figure>
       </div>
+      <div class="container">
+        <div class="cta-row" data-reveal>
+          <p class="cta-row__text"><strong>Habla con el equipo detrás de estas reseñas.</strong> 45 minutos, por videollamada.</p>
+          <div class="cta-row__btns">
+            <a class="btn btn--accent" href="/agendar/" data-go data-track="cta_reviews"><span>Agendar mi consulta</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+            <a class="btn btn--outline" href="/whatsapp/" data-go data-track="wa_reviews"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5"/></svg><span>Escribir por WhatsApp</span></a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============ 9 · RESERVA ============ -->
@@ -460,7 +480,7 @@
               </ul>
               <p class="offer__fine">El descuento no aplica a consultas en promoción. MEDLA analiza la viabilidad y gestiona tu expediente con diligencia; la resolución corresponde a la Administración.</p>
               <div class="offer__alt">
-                <a class="link" href="https://wa.me/34914321457?text=Hola%20MEDLA%2C%20tengo%20una%20duda%20antes%20de%20reservar%20la%20consulta%20de%20extranjer%C3%ADa" target="_blank" rel="noopener" data-track="click_whatsapp">¿Dudas antes de pagar? Escríbenos por WhatsApp</a>
+                <a class="link" href="/whatsapp/" data-go data-track="wa_dudas">¿Dudas antes de pagar? Escríbenos por WhatsApp</a>
                 <a class="link" href="tel:+34914321457" data-track="click_phone">O llámanos: +34 914 32 14 57</a>
               </div>
             </div>
@@ -485,7 +505,11 @@
         <div class="faq__intro">
           <p class="eyebrow" data-reveal>Preguntas frecuentes</p>
           <h2 id="faq-title" class="h2" data-reveal>Lo que nos preguntan <em>antes</em> de reservar.</h2>
-          <p class="faq__contact" data-reveal>¿No ves la tuya? <a class="link" href="https://wa.me/34914321457" target="_blank" rel="noopener" data-track="click_whatsapp">Escríbenos por WhatsApp</a>.</p>
+          <p class="faq__contact" data-reveal>¿No ves tu pregunta? Te la respondemos.</p>
+          <div class="cta-row__btns faq__btns" data-reveal>
+            <a class="btn btn--accent" href="/agendar/" data-go data-track="cta_faq"><span>Agendar mi consulta</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+            <a class="btn btn--outline" href="/whatsapp/" data-go data-track="wa_faq"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5"/></svg><span>WhatsApp</span></a>
+          </div>
         </div>
 
         <div class="accordion" data-accordion>
@@ -538,10 +562,13 @@
       <div class="finale__content">
         <h2 id="finale-title" class="finale__title" data-reveal>Tu próxima etapa en España empieza con <em>una conversación.</em></h2>
         <p class="finale__lead" data-reveal>45 minutos, 60,50 € y un plan claro. Si decides seguir, lo descontamos.</p>
-        <a class="btn btn--accent btn--lg" href="#reserva" data-track="cta_finale" data-reveal>
+        <div class="finale__ctas" data-reveal>
+          <a class="btn btn--accent btn--lg" href="/agendar/" data-go data-track="cta_finale">
           <span>Quiero mi consulta</span>
           <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </a>
+          <a class="btn btn--glass btn--lg" href="/whatsapp/" data-go data-track="wa_finale"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5"/></svg><span>Escribir por WhatsApp</span></a>
+        </div>
         <p class="finale__proof" data-reveal><span class="proof__stars" aria-hidden="true">★★★★★</span> Excelente · 42 reseñas en Google</p>
       </div>
     </section>
@@ -562,12 +589,17 @@
     </div>
   </footer>
 
+  <!-- WhatsApp flotante (escritorio) -->
+  <a class="wa-float" href="/whatsapp/" data-go data-track="wa_float" data-wa-float aria-hidden="true" tabindex="-1">
+    <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5"/></svg><span>¿Dudas? <strong>Escríbenos</strong></span>
+  </a>
+
   <!-- Barra fija en móvil -->
   <div class="dock" data-dock aria-hidden="true">
-    <a class="dock__wa" href="https://wa.me/34914321457" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" data-track="click_whatsapp" tabindex="-1">
+    <a class="dock__wa" href="/whatsapp/" data-go aria-label="Escribir por WhatsApp" data-track="wa_dock" tabindex="-1">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 9.5"/></svg>
     </a>
-    <a class="btn btn--accent dock__cta" href="#reserva" data-track="cta_dock" tabindex="-1">
+    <a class="btn btn--accent dock__cta" href="/agendar/" data-go data-track="cta_dock" tabindex="-1">
       <span>Reservar · 60,50 €</span>
       <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
     </a>
@@ -575,6 +607,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

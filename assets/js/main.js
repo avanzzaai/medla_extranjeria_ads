@@ -7,16 +7,9 @@
   const $$ = (s, el = d) => [...el.querySelectorAll(s)];
   const curtain = $('.curtain');
 
-  /* ---------- Medición para anuncios ----------
-     Empuja eventos a dataLayer (GTM) y, si existe, al píxel de Meta. */
-  const track = (event, data = {}) => {
-    (window.dataLayer = window.dataLayer || []).push({ event, ...data });
-    if (typeof window.fbq === 'function') {
-      if (event.startsWith('cta_') || event === 'case_select') window.fbq('trackCustom', 'BookingIntent', data);
-      if (event === 'click_whatsapp') window.fbq('track', 'Contact', { method: 'whatsapp' });
-      if (event === 'calendar_view') window.fbq('track', 'ViewContent', { content_name: 'Calendario extranjería' });
-    }
-  };
+  /* ---------- Medición (assets/js/common.js) ---------- */
+  const M = window.MEDLA || { track: () => {}, decorate: () => {}, onBookingComplete: () => {} };
+  const track = M.track;
 
   /* ---------- Situación elegida → tarjeta de precio ---------- */
   const state = { motivo: '' };
@@ -74,6 +67,10 @@
     setMotivo(restored);
   }
 
+  // Botones a /agendar/ y /whatsapp/ con situación, origen y campaña; reserva → /gracias/
+  M.decorate(() => state.motivo);
+  M.onBookingComplete(() => state.motivo);
+
   d.addEventListener('click', (e) => {
     const chip = e.target.closest('[data-motivo-chip]');
     if (chip) {
@@ -83,7 +80,7 @@
     const pick = e.target.closest('[data-motivo]');
     if (pick) setMotivo(pick.dataset.motivo);
     const t = e.target.closest('[data-track]');
-    if (t) track(t.dataset.track, { motivo: state.motivo || 'sin elegir' });
+    if (t) track('cta_click', { origen: t.dataset.track, motivo: state.motivo || 'sin elegir' });
   });
 
   /* ---------- Calendario de HighLevel (carga diferida) ---------- */
@@ -111,7 +108,7 @@
   } else {
     loadCalendar();
   }
-  // Si alguien pulsa un CTA, el calendario empieza a cargar antes de llegar.
+  // Si alguien salta a la reserva, el calendario empieza a cargar antes de llegar.
   d.addEventListener('click', (e) => { if (e.target.closest('a[href="#reserva"]')) loadCalendar(); });
 
   /* ---------- Acordeón ---------- */
@@ -137,8 +134,9 @@
     $('[data-rev-next]').addEventListener('click', () => step(1));
   }
 
-  /* ---------- Barra fija móvil + nav que se esconde ---------- */
+  /* ---------- Barra fija móvil, WhatsApp flotante y nav que se esconde ---------- */
   const dock = $('[data-dock]');
+  const waFloat = $('[data-wa-float]');
   const nav = $('[data-nav]');
   const heroCard = $('[data-hero-card]');
   const booking = $('#reserva');
@@ -146,9 +144,12 @@
   let onBooking = false;
   const syncDock = () => {
     const show = pastHero && !onBooking;
-    dock.classList.toggle('is-visible', show);
-    dock.setAttribute('aria-hidden', String(!show));
-    $$('a', dock).forEach((a) => a.setAttribute('tabindex', show ? '0' : '-1'));
+    [dock, waFloat].forEach((el) => {
+      if (!el) return;
+      el.classList.toggle('is-visible', show);
+      el.setAttribute('aria-hidden', String(!show));
+      (el.matches('a') ? [el] : $$('a', el)).forEach((a) => a.setAttribute('tabindex', show ? '0' : '-1'));
+    });
   };
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([en]) => { pastHero = !en.isIntersecting; syncDock(); }).observe(heroCard);
@@ -381,7 +382,7 @@
           toggleClass: 'is-active',
         });
         gsap.from(step.querySelector('.h3'), {
-          x: 24, duration: 0.9, ease: 'expo.out',
+          y: 18, duration: 0.9, ease: 'expo.out',
           scrollTrigger: { trigger: step, start: 'top 80%', once: true },
         });
       });

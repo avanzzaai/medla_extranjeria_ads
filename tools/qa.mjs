@@ -17,7 +17,7 @@ cdp.on((m) => {
   if (m.method === 'Runtime.exceptionThrown') logs.push('EXC ' + (m.params.exceptionDetails.exception?.description || m.params.exceptionDetails.text));
   if (m.method === 'Runtime.consoleAPICalled' && ['error', 'warning'].includes(m.params.type)) logs.push(m.params.type + ' ' + m.params.args.map((a) => a.value ?? a.description).join(' '));
 });
-await page.send('Emulation.setDeviceMetricsOverride', { width: W, height: H, deviceScaleFactor: 1, mobile: W < 600 });
+await page.send('Emulation.setDeviceMetricsOverride', { width: W, height: H, deviceScaleFactor: 1, mobile: W < 600, screenWidth: W, screenHeight: H });
 if (W < 600) await page.send('Emulation.setTouchEmulationEnabled', { enabled: true });
 await page.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: reduce ? 'reduce' : 'no-preference' }] });
 await page.goto(process.env.URL || 'http://localhost:4325/', 3600);
@@ -50,7 +50,7 @@ for (const [name, expr] of stops) {
   i += 1;
   await page.screenshot(`${out}/${W}${reduce ? 'r' : ''}-${String(i).padStart(2, '0')}-${name}.png`, { captureBeyondViewport: false });
 }
-const info = await page.eval(`({ overflowX: document.documentElement.scrollWidth - innerWidth, st: window.ScrollTrigger ? ScrollTrigger.getAll().length : -1, h: document.documentElement.scrollHeight,
+const info = await page.eval(`({ overflowX: Math.max(document.documentElement.scrollWidth, innerWidth) - document.documentElement.clientWidth, st: window.ScrollTrigger ? ScrollTrigger.getAll().length : -1, h: document.documentElement.scrollHeight,
   wide: [...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect(); return r.right>innerWidth+1 && getComputedStyle(e).position!=='fixed' && !e.closest('.marquee,.reviews__track,.zoom,.finale,.hero__orbits,.finder__chips')}).slice(0,8).map(e=>e.tagName+'.'+e.className+':'+Math.round(e.getBoundingClientRect().right)) })`);
 console.log(JSON.stringify(info));
 console.log(logs.length ? logs.join('\n') : 'consola limpia');
